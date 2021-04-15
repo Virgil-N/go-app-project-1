@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-04-15 09:46:14
+ * Last Modified: 2021-04-15 11:37:34
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -17,6 +17,7 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/Virgil-N/go-app-project-1/pages"
 	"github.com/maxence-charriere/go-app/v8/pkg/app"
 )
 
@@ -25,12 +26,25 @@ import (
 // embedding app.Compo into a struct.
 type hello struct {
 	app.Compo
+	name string
 }
 
 // The Render method is where the component appearance is defined. Here, a
 // "Hello World!" is displayed as a heading.
 func (h *hello) Render() app.UI {
-	return app.H1().Text("Hello World!")
+	return app.Div().Body(
+		app.Text(h.name),
+		app.H1().Text("------"),
+		app.Input().
+			Value(h.name). // The name field used as current input value
+			OnChange(h.OnInputChange),
+	)
+}
+
+func (h *hello) OnInputChange(ctx app.Context, e app.Event) {
+	h.name = ctx.JSSrc.Get("value").String() // Name field is modified
+	h.Update()
+	ctx.Navigate("/home")
 }
 
 // The main function is the entry point where the app is configured and started.
@@ -42,6 +56,7 @@ func main() {
 	// This is done by calling the Route() function,  which tells go-app what
 	// component to display for a given path, on both client and server-side.
 	app.Route("/", &hello{})
+	app.Route("/home", &pages.Home{})
 
 	// Once the routes set up, the next thing to do is to either launch the app
 	// or the server that serves the app.
@@ -65,6 +80,16 @@ func main() {
 		Name:        "Hello",
 		Description: "An Hello World! example",
 	})
+
+	// err := app.GenerateStaticWebsite("../test-app", &app.Handler{
+	// 	Name:        "Hello",
+	// 	Description: "An Hello World! example",
+	// 	Resources:   app.LocalDir("../test-app/web"),
+	// })
+
+	// if err != nil {
+	// 	log.Fatal(err)
+	// }
 
 	if err := http.ListenAndServe(":8000", nil); err != nil {
 		log.Fatal(err)
