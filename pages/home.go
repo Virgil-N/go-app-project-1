@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-04-15 11:38:34
+ * Last Modified: 2021-08-29 07:52:14
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -13,7 +13,10 @@
 
 package pages
 
-import "github.com/maxence-charriere/go-app/v8/pkg/app"
+import (
+	"github.com/Virgil-N/go-app-project-1/pages/components"
+	"github.com/maxence-charriere/go-app/v8/pkg/app"
+)
 
 type Home struct {
 	app.Compo
@@ -22,6 +25,6 @@ type Home struct {
 func (h *Home) Render() app.UI {
 	return app.P().Body(
 		app.Text("Home "),
-		&header{},
+		&components.Header{},
 	)
 }

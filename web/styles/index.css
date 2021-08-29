@@ -1,0 +1,21 @@
+/*
+ * Created Date: 2021-08-29 07:33:53
+ * Author: Virgil-N
+ * Description:
+ * -----
+ * Last Modified: 2021-08-29 07:34:36
+ * Modified By: Virgil-N (lieut9011@126.com)
+ * -----
+ * Copyright (c) 2019 - 2021 ⚐
+ * Virgil-N will save your soul!
+ * -----
+ */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: gray;
+}

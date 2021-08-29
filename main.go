@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-04-15 11:37:34
+ * Last Modified: 2021-08-29 08:27:27
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -37,13 +37,21 @@ func (h *hello) Render() app.UI {
 		app.H1().Text("------"),
 		app.Input().
 			Value(h.name). // The name field used as current input value
-			OnChange(h.OnInputChange),
+			OnInput(h.OnInputChange),
+		app.Button().Body(
+			app.Text("go"),
+		).OnClick(h.Leap),
 	)
 }
 
 func (h *hello) OnInputChange(ctx app.Context, e app.Event) {
 	h.name = ctx.JSSrc.Get("value").String() // Name field is modified
+	h.ValueTo(&h.name)
 	h.Update()
+	ctx.Navigate("/home")
+}
+
+func (h *hello) Leap(ctx app.Context, e app.Event) {
 	ctx.Navigate("/home")
 }
 
@@ -56,6 +64,7 @@ func main() {
 	// This is done by calling the Route() function,  which tells go-app what
 	// component to display for a given path, on both client and server-side.
 	app.Route("/", &hello{})
+	app.Route("/login", &pages.Login{})
 	app.Route("/home", &pages.Home{})
 
 	// Once the routes set up, the next thing to do is to either launch the app
@@ -79,19 +88,22 @@ func main() {
 	http.Handle("/", &app.Handler{
 		Name:        "Hello",
 		Description: "An Hello World! example",
+		Styles: []string{
+			"/web/styles/index.css", // Loads hello.css file.
+		},
 	})
 
-	// err := app.GenerateStaticWebsite("../test-app", &app.Handler{
+	// err := app.GenerateStaticWebsite("./dist", &app.Handler{
 	// 	Name:        "Hello",
 	// 	Description: "An Hello World! example",
-	// 	Resources:   app.LocalDir("../test-app/web"),
+	// 	Resources:   app.LocalDir("./dist"),
 	// })
 
 	// if err != nil {
 	// 	log.Fatal(err)
 	// }
 
-	if err := http.ListenAndServe(":8000", nil); err != nil {
+	if err := http.ListenAndServe(":3400", nil); err != nil {
 		log.Fatal(err)
 	}
 }

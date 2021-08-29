@@ -1,8 +1,8 @@
 .DS_Store
 node_modules
 /dist
-/app
-
+/web/*.wasm
+app
 *.exe
 
 # local env files

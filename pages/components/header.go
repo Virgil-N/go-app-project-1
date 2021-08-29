@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-04-15 09:57:23
+ * Last Modified: 2021-08-29 07:52:03
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -11,14 +11,14 @@
  * -----
  */
 
-package pages
+package components
 
 import "github.com/maxence-charriere/go-app/v8/pkg/app"
 
-type header struct {
+type Header struct {
 	app.Compo
 }
 
-func (h *header) Render() app.UI {
+func (h *Header) Render() app.UI {
 	return app.Text("header!")
 }
