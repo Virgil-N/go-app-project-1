@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-09-10 03:25:58
+ * Last Modified: 2021-09-10 03:34:45
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -32,7 +32,7 @@ type hello struct {
 // The Render method is where the component appearance is defined. Here, a
 // "Hello World!" is displayed as a heading.
 func (h *hello) Render() app.UI {
-	return app.Div().Body(
+	return app.Div().Class("xx").Body(
 		app.Text(h.name),
 		app.H1().Text("------"),
 		app.Input().

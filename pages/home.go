@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-09-10 03:17:21
+ * Last Modified: 2021-09-10 04:19:18
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -23,8 +23,11 @@ type Home struct {
 }
 
 func (h *Home) Render() app.UI {
-	return app.P().Body(
-		app.Text("Home "),
+	return app.Div().Body(
+		&components.Nav{},
+		app.Div().Body(
+			app.Text("h097dh6f"),
+		),
 		&components.Header{},
 	)
 }

@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-09-10 03:17:25
+ * Last Modified: 2021-09-10 04:06:59
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -20,14 +20,12 @@ type Login struct {
 }
 
 func (h *Login) Render() app.UI {
-	return app.Html().Body(
-		app.Head().Body(
-			app.Title().Body(
-				app.Text("Login"),
-			),
-		),
-		app.Body().Body(
-			app.P().Text("llll"),
+
+	return app.Div().Body(
+		app.Nav().Class("nav").Body(),
+		app.Div().Class("main").Body(
+			app.Aside().Class("aside").Body(),
+			app.Section().Class("section").Body(),
 		),
 	)
 }
