@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-09-10 03:17:05
+ * Last Modified: 2021-09-10 03:25:58
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -45,7 +45,7 @@ func (h *hello) Render() app.UI {
 }
 
 func (h *hello) OnInputChange(ctx app.Context, e app.Event) {
-	h.name = ctx.JSSrc.Get("value").String() // Name field is modified
+	h.name = ctx.JSSrc().Get("value").String()
 	h.ValueTo(&h.name)
 	h.Update()
 	ctx.Navigate("/home")
