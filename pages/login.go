@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-08-29 08:38:51
+ * Last Modified: 2021-09-10 03:17:25
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -13,7 +13,7 @@
 
 package pages
 
-import "github.com/maxence-charriere/go-app/v8/pkg/app"
+import "github.com/maxence-charriere/go-app/v9/pkg/app"
 
 type Login struct {
 	app.Compo

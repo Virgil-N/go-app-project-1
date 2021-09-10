@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-08-29 07:52:03
+ * Last Modified: 2021-09-10 03:17:15
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -13,7 +13,7 @@
 
 package components
 
-import "github.com/maxence-charriere/go-app/v8/pkg/app"
+import "github.com/maxence-charriere/go-app/v9/pkg/app"
 
 type Header struct {
 	app.Compo

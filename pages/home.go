@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-08-29 07:52:14
+ * Last Modified: 2021-09-10 03:17:21
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -15,7 +15,7 @@ package pages
 
 import (
 	"github.com/Virgil-N/go-app-project-1/pages/components"
-	"github.com/maxence-charriere/go-app/v8/pkg/app"
+	"github.com/maxence-charriere/go-app/v9/pkg/app"
 )
 
 type Home struct {

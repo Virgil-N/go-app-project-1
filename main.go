@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-08-29 08:27:27
+ * Last Modified: 2021-09-10 03:17:05
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -18,7 +18,7 @@ import (
 	"net/http"
 
 	"github.com/Virgil-N/go-app-project-1/pages"
-	"github.com/maxence-charriere/go-app/v8/pkg/app"
+	"github.com/maxence-charriere/go-app/v9/pkg/app"
 )
 
 // hello is a component that displays a simple "Hello World!". A component is a
