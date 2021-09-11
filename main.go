@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-09-11 07:15:20
+ * Last Modified: 2021-09-11 07:43:53
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -52,10 +52,13 @@ func main() {
 	// required resources to make it work into a web browser. Here it is
 	// configured to handle requests with a path that starts with "/".
 	http.Handle("/", &app.Handler{
-		Name:        "Hello",
-		Description: "An Hello World! example",
+		Name:        "Go-App",
+		Description: "Go-App!",
 		Styles: []string{
 			"/web/styles/index.css", // Loads hello.css file.
+		},
+		Scripts: []string{
+			"/web/scripts/materialize.min.js",
 		},
 	})
 
