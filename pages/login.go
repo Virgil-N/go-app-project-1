@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-09-12 07:37:51
+ * Last Modified: 2021-09-16 09:36:18
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -13,7 +13,10 @@
 
 package pages
 
-import "github.com/maxence-charriere/go-app/v9/pkg/app"
+import (
+	"github.com/Virgil-N/go-app-project-1/pages/components"
+	"github.com/maxence-charriere/go-app/v9/pkg/app"
+)
 
 type Login struct {
 	app.Compo
@@ -23,7 +26,7 @@ type Login struct {
 func (l *Login) Render() app.UI {
 
 	return app.Div().Body(
-		app.Nav().Class("nav").Body(),
+		&components.Nav{},
 		app.Div().Class("main").Body(
 			app.Aside().Class("aside").Body(),
 			app.Section().Class("section").Body(

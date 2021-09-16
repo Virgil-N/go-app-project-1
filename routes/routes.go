@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-09-10 04:13:15
+ * Last Modified: 2021-09-16 10:29:52
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -33,23 +33,43 @@ var Routes []Route
 func init() {
 	Routes = []Route{
 		{
-			Name: "Login",
-			Path: "/login",
+			Name: "生活记录",
+			Path: "/life",
 			// Component:
 			Meta: Meta{
 				RequireLogin: false,
 				Hide:         false,
-				Title:        "Login",
+				Title:        "Life",
 				IconSrc:      "",
 			},
 		},
 		{
-			Name: "Home",
-			Path: "/home",
+			Name: "学习笔记",
+			Path: "/study",
 			Meta: Meta{
 				RequireLogin: false,
 				Hide:         false,
-				Title:        "Home",
+				Title:        "Study",
+				IconSrc:      "",
+			},
+		},
+		{
+			Name: "这是个测试",
+			Path: "/test",
+			Meta: Meta{
+				RequireLogin: false,
+				Hide:         true,
+				Title:        "Test",
+				IconSrc:      "",
+			},
+		},
+		{
+			Name: "旅行日志",
+			Path: "/travel",
+			Meta: Meta{
+				RequireLogin: false,
+				Hide:         false,
+				Title:        "Travel",
 				IconSrc:      "",
 			},
 		},
