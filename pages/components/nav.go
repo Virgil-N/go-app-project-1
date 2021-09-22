@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-09-16 11:09:54
+ * Last Modified: 2021-09-22 04:21:02
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -22,7 +22,7 @@ type Nav struct {
 	app.Compo
 }
 
-func (n *Nav) Render() app.UI {
+func (nav *Nav) Render() app.UI {
 	return app.Nav().Class("nav bg-white").Body(
 		app.Div().Class("max-w-7xl mx-auto px-2 sm:px-6 lg:px-8").Body(
 			app.Div().Class("relative flex items-center justify-between h-16").Body(

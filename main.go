@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-09-11 07:43:53
+ * Last Modified: 2021-09-22 05:02:01
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -58,7 +58,8 @@ func main() {
 			"/web/styles/index.css", // Loads hello.css file.
 		},
 		Scripts: []string{
-			"/web/scripts/materialize.min.js",
+			"/web/assets/jquery-3.6.0.min.js",
+			"/web/assets/Semantic-UI-CSS-master/semantic.min.js",
 		},
 	})
 

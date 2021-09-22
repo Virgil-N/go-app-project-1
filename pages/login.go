@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-09-16 09:36:18
+ * Last Modified: 2021-09-22 05:32:44
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -14,41 +14,35 @@
 package pages
 
 import (
-	"github.com/Virgil-N/go-app-project-1/pages/components"
 	"github.com/maxence-charriere/go-app/v9/pkg/app"
 )
 
 type Login struct {
 	app.Compo
-	name string
+	Name     string
+	password string
 }
 
-func (l *Login) Render() app.UI {
-
-	return app.Div().Body(
-		&components.Nav{},
-		app.Div().Class("main").Body(
-			app.Aside().Class("aside").Body(),
-			app.Section().Class("section").Body(
-				app.Input().
-					Value(l.name). // The name field used as current input value
-					OnInput(l.OnInputChange),
-				app.Br(),
-				app.Text(l.name),
-				app.Br(),
-				app.Button().Class("waves-effect waves-light btn").Body(
-					app.Text("go"),
-				).OnClick(l.Go)),
+func (login *Login) Render() app.UI {
+	return app.Div().Class("ui grid container center middle aligned").Body(
+		app.Div().Class("login-wrap").Body(
+			app.H2().Class("ui header").Body(
+				app.Div().Class("content").Body(
+					app.Text("Login"),
+				),
+			),
+			app.Div().Class("ui large form").Body(),
+			app.Div().Class("ui message").Body(
+				app.Text("新用户？"),
+				app.A().Href("#").Text("注册"),
+			),
+			app.Button().Body(
+				app.Text("click me"),
+			).OnClick(login.withClick),
 		),
 	)
 }
 
-func (l *Login) OnInputChange(ctx app.Context, e app.Event) {
-	l.name = ctx.JSSrc().Get("value").String()
-	l.ValueTo(&l.name)
-	l.Update()
-}
-
-func (l *Login) Go(ctx app.Context, e app.Event) {
-	ctx.Navigate("/home")
+func (login *Login) withClick(ctx app.Context, e app.Event) {
+	ctx.NewActionWithValue("click-me", "from login")
 }
