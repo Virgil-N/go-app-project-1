@@ -3,7 +3,7 @@
  * Author: Virgil-N
  * Description:
  * -----
- * Last Modified: 2021-09-22 05:32:44
+ * Last Modified: 2021-09-22 05:45:46
  * Modified By: Virgil-N (lieut9011@126.com)
  * -----
  * Copyright (c) 2019 - 2021 ⚐
@@ -14,6 +14,8 @@
 package pages
 
 import (
+	"fmt"
+
 	"github.com/maxence-charriere/go-app/v9/pkg/app"
 )
 
@@ -44,5 +46,7 @@ func (login *Login) Render() app.UI {
 }
 
 func (login *Login) withClick(ctx app.Context, e app.Event) {
+	fmt.Println(ctx)
+	fmt.Println(e)
 	ctx.NewActionWithValue("click-me", "from login")
 }
